@@ -1,0 +1,12 @@
+body, html {
+  height: 100%;
+  }
+  .bg {
+  margin: auto;
+  padding: 0px;
+  background-image: url("../src/bg-images/2.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
