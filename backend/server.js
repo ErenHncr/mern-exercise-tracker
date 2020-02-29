@@ -7,6 +7,10 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+process.env.REACT_APP_CURRENT_PORT = port; 
+
+
+console.log(process.env.REACT_APP_CURRENT_PORT);
 app.use(cors());
 app.use(express.json());
 

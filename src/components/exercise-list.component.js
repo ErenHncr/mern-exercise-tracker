@@ -27,7 +27,7 @@ const Exercise = props => (
 export default class ExerciseList extends Component {
   
   constructor(props){
-    super(props);
+    super(props); 
     this.state = { exercises:[]};
   }
 
