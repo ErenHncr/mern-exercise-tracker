@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+require('dotenv').config();
+
 const Exercise = props => (
   <tr>
     <td>{props.exercise.username}</td>
@@ -23,21 +25,21 @@ const Exercise = props => (
 )
 
 export default class ExerciseList extends Component {
+  
   constructor(props){
     super(props);
-
     this.state = { exercises:[]};
   }
 
   componentDidMount(){
-    axios.get('http://localhost:5000/exercises/')
+    axios.get(process.env.REACT_APP_BASE_URL+'/exercises/')
       .then(res => {
           this.setState({ exercises: res.data });
       });
   }
 
   deleteExercise = (id) => {
-    axios.delete('http://localhost:5000/exercises/'+id)
+    axios.delete(process.env.REACT_APP_BASE_URL+'/exercises/'+id)
       .then(res => { console.log(res.data)});
 
     this.setState({
@@ -53,7 +55,9 @@ export default class ExerciseList extends Component {
 
 
   render() {
+ 
     return (
+      
       <div className='exerciseList'>
         <h3>Logged Exercises</h3>
         <table className="table">
